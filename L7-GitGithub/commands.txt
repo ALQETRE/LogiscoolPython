@@ -1,0 +1,22 @@
+git init   <- Vytvoří repozitář
+git status   <- Ukáže co je změněné ale nepřidanné (červeně) a to co je přidanné (zeleně)
+git add *    <- Přidá všechno
+git commit -m "sem se píše zpráva"   <- Uloží novou verzi toho co je přidaný
+git log    <- Ukáže všechny commity
+
+git push   <- Dá váš repozitář z pc na web (github)
+git pull   <- Vezme repozitář z webu (githubu) a dá ho na váš pc
+
+git clone https://github.com/ALQETRE/ukazka   <- Naklonuje nas repozitář na zápisky (použijete ho jen jednou)
+
+
+
+
+
+
+
+
+
+Docházka:
+- patrik c. byl presencne
+- ostatni online (byli vsichni)
