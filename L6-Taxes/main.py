@@ -1,3 +1,7 @@
+import pandas
+import numpy
+
+
 # Annual income per region:
 
 # Prague Region
