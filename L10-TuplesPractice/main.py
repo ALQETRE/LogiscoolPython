@@ -114,3 +114,9 @@ for student in grades:
 only_grades.sort()
 median = only_grades[len(only_grades)//2 -1]
 print(f"The median of all grades is {median}")
+
+
+
+
+# Docházka:
+# Všichni online
