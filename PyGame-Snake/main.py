@@ -7,7 +7,7 @@ WIDTH = 15
 HEIGHT = 10
 
 BLOCK_SIZE = 50
-SNAKE_SPEED = 5
+SNAKE_SPEED = 7
 
 window = pygame.display.set_mode((WIDTH * BLOCK_SIZE, HEIGHT * BLOCK_SIZE))
 pygame.display.set_caption("Snake Game")
@@ -25,9 +25,11 @@ game_over_font = pygame.font.SysFont("Arial", 40)
 
 
 def update_frame(snake, snake_len, apple_pos):
+    global snake_color
     window.fill(background_color)
 
     for x, y in snake:
+        snake_color = ((snake_color[0] + 2) % 256,(snake_color[1] + 3) % 256, (snake_color[2] + 5) % 256)
         pygame.draw.rect(window, snake_color, (x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE))
 
 
@@ -53,6 +55,9 @@ def generate_apple():
 
 
 def game():
+    global snake_color
+
+
     snake_len = 3
     snake = [ (WIDTH//2, HEIGHT//2) ]
 
@@ -69,6 +74,7 @@ def game():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
+                break
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_LEFT:
                     dir_x = -1
@@ -106,6 +112,8 @@ def game():
             if block == apple_pos:
                 snake_len += 1
                 apple_pos = generate_apple()
+
+
 
         update_frame(snake, snake_len, apple_pos)
         clock.tick(SNAKE_SPEED)
