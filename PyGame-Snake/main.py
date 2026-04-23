@@ -30,6 +30,7 @@ def update_frame(snake, snake_len, apple_pos):
 
     for x, y in snake:
         snake_color = ((snake_color[0] + 2) % 256,(snake_color[1] + 3) % 256, (snake_color[2] + 5) % 256)
+        
         pygame.draw.rect(window, snake_color, (x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE))
 
 

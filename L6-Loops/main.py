@@ -86,3 +86,16 @@ while True:
 
     if i > 9:
         break
+
+
+
+my_list = ["A", "B", "C"]
+print(my_list[:])
+
+my_list = ["ahoj" for i in range(1, 4)]
+print(my_list)
+
+[
+    [1, 2, 3, 4],
+    [1, 2, 3, 4]
+]
