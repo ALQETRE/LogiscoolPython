@@ -7,18 +7,18 @@ df = pd.DataFrame(
         [1, 2, 3],
         [4, 5, 6],
         ["A", "b", "c"]
-    ]
+    ],
 )
 
-# print(df)
+print(df)
 
-df.to_csv("table.csv", index= False, header= False)
-
-
-df1 = pd.read_csv("example.csv", skipinitialspace= True, header= 0)
+df.to_csv("example2.csv", index= False, header= ["Sloupec1", "Sloupec2", "Sloupec3"])
 
 
-# print(df1)
+df_read = pd.read_csv("example.csv", skipinitialspace= True, header= 0)
+# df1 = pd.read_csv("example.csv", skipinitialspace= True, header= 0)
+
+print(len(df_read.loc[2, "CisloB"]))
 
 
 
@@ -67,7 +67,7 @@ def remove_book(name):
 add_book("D", "Autor2")
 add_book("E", "Capek")
 
-remove_book("F")
+remove_book("B")
 
-print(knizky)
-print(autori)
+# print(knizky)
+# print(autori)
