@@ -6,7 +6,6 @@ from random import randrange
 # Score je kolik platforem jsme udělali
 # Nebo max výška kam jsme se dostali
 
-
 WIDTH = 400
 HEIGHT = 450
 
@@ -56,6 +55,10 @@ vel_x = 0
 vel_y = 0
 
 already_jump = False
+
+font = pygame.font.SysFont("comicsansms", 20)
+
+score = -4
 
 
 def draw_platforms():
@@ -130,7 +133,7 @@ def draw_player():
 
 
 def make_platform():
-    global platforms, platform_speeds
+    global platforms, platform_speeds, score
 
     width = randrange(50, 80)
     x = randrange(0, WIDTH - width)
@@ -146,6 +149,8 @@ def make_platform():
 
     platforms.append(platform)
     platform_speeds.append(speed)
+
+    score += 1
 
 def move_screen():
     player.y += 3
@@ -175,6 +180,11 @@ while True:
 
     draw_platforms()
     draw_player()
+
+    # print(f"Score: {score}")
+
+    text_obj = font.render(f"Score: {score}!", True, RED)
+    window.blit(text_obj, (WIDTH//2 - text_obj.get_width()//2, 10))
 
     pygame.display.update()
 
